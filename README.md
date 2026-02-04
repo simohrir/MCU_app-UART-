@@ -1,28 +1,8 @@
-# UART Temperature & Humidity Data Logger (Java)
 
-## Description
-This project is a simple data logger that uses UART communication to monitor temperature and humidity data from a microcontroller using a Java desktop application.
+This project consists of a simple embedded data logger based on the PIC18F4550 microcontroller, designed to measure, store, and visualize environmental data. The system integrates a real-time clock (RTC) to manage time-stamping, EEPROM memory for data logging, and an LCD to locally display the current time and measured values.
 
-The application does not display any data until the correct serial port is selected and a successful connection is established. Once connected, the user can monitor real-time data, control an LED on the microcontroller, and visualize sensor values using dynamic graphs.
+Temperature and humidity measurements are acquired using a DHT11 sensor, with a dedicated driver developed directly from the sensor’s datasheet to ensure accurate timing and reliable communication. The measured data is periodically processed by the microcontroller and transmitted over UART for external monitoring. An LM35 temperature sensor is also supported for analog temperature measurement and calibration purposes.
 
----
+To enable real-time visualization and analysis on a PC, a Java Swing desktop application was developed. The application uses jSerialComm to handle UART communication with the microcontroller and JFreeChart to plot temperature and humidity data dynamically. The user interface allows the selection of the appropriate COM port, connection and disconnection from the device, and provides visual feedback for successful or failed connections.
 
-## Features
-- UART serial communication between microcontroller and Java application
-- Manual selection of the correct COM port
-- Connection status handling:
-  - Success panel displayed when connection is successful
-  - Error panel displayed if connection fails
-- LED control:
-  - Button to turn the microcontroller LED ON or OFF (used mainly for debugging)
-- Real-time data visualization:
-  - Temperature graph
-  - Humidity graph
-- Live status display:
-  - Current temperature
-  - Current humidity
-  - Current time
-- Last 1 Hour data:
-  - A dedicated window opens to display temperature and humidity data recorded during the last hour
-
----
+In addition to data monitoring, the application includes an LED ON/OFF control to remotely toggle a microcontroller LED, mainly used for debugging and communication verification. A dedicated “Last 1 Hour” feature opens a separate window that displays the temperature and humidity values recorded during the previous hour, allowing short-term trend analysis.
