@@ -1,3 +1,4 @@
+<img width="908" height="712" alt="image" src="https://github.com/user-attachments/assets/3646fb8a-128e-4811-acf0-752e6508b497" />
 
 This project consists of a simple embedded data logger based on the PIC18F4550 microcontroller, designed to measure, store, and visualize environmental data. The system integrates a real-time clock (RTC) to manage time-stamping, EEPROM memory for data logging, and an LCD to locally display the current time and measured values.
 
